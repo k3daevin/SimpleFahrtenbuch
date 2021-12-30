@@ -1,0 +1,71 @@
+﻿@page "/stuhlgang"
+
+<PageTitle>Weather forecast</PageTitle>
+
+@using SimpleFahrtenbuchBlazorServer.Data
+@inject StuhlgangService StuhlgangService
+
+
+<h3>StuhlgangPage</h3>
+
+@if (Stuhlgangs == null)
+{
+    <p>Kein Stuhlgang vorhanden!</p>
+} else
+{
+    @foreach(var stuhlgang in Stuhlgangs)
+    {
+        <StuhlgangComponent Content="stuhlgang"></StuhlgangComponent>
+    }
+}
+
+<button class="btn btn-primary" @onclick="Laden">Laden!</button>
+
+<div>
+@*
+    <InputDate Value="newTimeStamp"></InputDate>
+    <InputNumber Value="newBristol"></InputNumber>
+    <InputText Value="newKommentar"></InputText>
+*@
+<input type="datetime-local" @bind="newTimeStamp" />
+<input type="number" @bind="newBristol" />
+
+<input type="text" @bind="newKommentar" />
+</div>
+
+
+<div>
+    @newTimeStamp @newBristol @newKommentar
+</div>
+
+<button class="btn btn-primary" @onclick="Hinzufuegen">Anhaeften!</button>
+
+
+@code {
+    private List<Stuhlgang> Stuhlgangs = null;
+
+    private DateTime newTimeStamp = DateTime.Now;
+
+    private int newBristol = 4;
+
+    private string newKommentar = string.Empty;
+
+    private void Laden()
+    {
+        Stuhlgangs = StuhlgangService.GetStuhlgangs().ToList();
+    }
+
+    private void Hinzufuegen()
+    {
+        var stuhlgang = new Stuhlgang {
+            BristolSkala = newBristol,
+            Kommentar = newKommentar,
+            TimeStamp = newTimeStamp
+        };
+        StuhlgangService.AddStuhlgang(stuhlgang);
+
+        Laden();
+    }
+
+}
+

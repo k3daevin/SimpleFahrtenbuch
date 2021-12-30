@@ -1,0 +1,11 @@
+﻿@using SimpleFahrtenbuchBlazorServer.Data
+
+<p>
+    @Content.TimeStamp: <b>@Content.BristolSkala</b>  <i>@Content.Kommentar</i>
+</p>
+
+
+@code {
+    [Parameter]
+    public Stuhlgang Content { get; set; }
+}
