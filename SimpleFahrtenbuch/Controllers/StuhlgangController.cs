@@ -19,13 +19,6 @@ namespace SimpleFahrtenbuch.Controllers
             new Stuhlgang {TimeStamp = DateTime.Now - TimeSpan.FromHours(-1), BristolSkala = 1, Kommentar = "future pflock"},
         };
 
-        private readonly ILogger<StuhlgangController> _logger;
-
-        public StuhlgangController(ILogger<StuhlgangController> logger)
-        {
-            _logger = logger;
-        }
-
 
         //diese Methode wird bei einem GET-Request aufgerufen
         //der Name der Methode ist egal, wichtig ist das Attribug [HttpGet]

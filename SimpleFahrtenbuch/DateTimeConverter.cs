@@ -9,7 +9,7 @@ namespace SimpleFahrtenbuch
     {
         private const string DateTimeLocalFormat = "yyyy-MM-ddTHH:mm";
         private const string JavaScriptFormat = "yyyy-MM-ddTHH:mm:ss";
-        private const string SwaggerFormat = "yyyy-MM-ddThh:mm:ss.fffZ";
+        private const string SwaggerFormat = "yyyy-MM-ddThh:mm:ss.fffZ"; //TODO
         private static string[] ReadFormats = new [] { DateTimeLocalFormat, JavaScriptFormat, SwaggerFormat };
 
         public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

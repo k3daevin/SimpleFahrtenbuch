@@ -15,6 +15,6 @@ function clearDivContent(div) {
 
 function createTdWithText(text) {
     let elem = document.createElement('td')
-    timeStamp.innerText = text
+    elem.innerText = text
     return elem
 }
