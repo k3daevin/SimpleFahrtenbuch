@@ -23,13 +23,13 @@ namespace SimpleFahrtenbuch.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Stuhlgang> Get()
+        public IEnumerable<Stuhlgang> Lesen()
         {
             return Stuhlgangs;
         }
 
         [HttpPost]
-        public void Post([FromBody]Stuhlgang stuhlgang)
+        public void NeuerEintrag([FromBody]Stuhlgang stuhlgang)
         {
             Stuhlgangs.Add(stuhlgang);
         }

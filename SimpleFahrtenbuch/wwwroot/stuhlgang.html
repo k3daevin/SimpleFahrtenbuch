@@ -2,12 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <!-- das base.js binden wir mal gleich am Anfang ein -->
     <script src="js/base.js"></script>
     <title>StuhlgangBuch</title>
 </head>
 <body>
     <h1>So schauts aus:</h1>
+
+    <!-- hier wird die Tabelle reingeschrieben mit JS -->
     <div id="stuhlgang"></div>
+
+    <!-- dieses Formular dient dazu neue Einträge zu machen-->    
     <div id="newshit">
         <form action="/Stuhlgang" method=post id="shitform">
             <table>
@@ -26,6 +31,11 @@
             <input type="button" value="Hinzufuegen" onclick="formsubmit()"/>
         </form>
     </div>
+
+    <!-- dieses .js wird am Ende eingebunden, weil reload() auf das div-stuhlgang zugreift
+         wenn reload() gleich am Anfang gemacht wird existiert div-stuhlgang noch nicht
+         deswegen am Ende nach den ganzen Elementen
+        -->
     <script src="js/stuhlgang.js"></script>
 </body>
 </html>
