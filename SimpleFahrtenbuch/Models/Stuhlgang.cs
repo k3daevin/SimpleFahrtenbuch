@@ -1,5 +1,7 @@
 ﻿namespace SimpleFahrtenbuch.Models
 {
+    //entspricht einem Stuhlgang
+    //wird von der WebAPI automatisch von/nach JSON konvertiert
     public class Stuhlgang
     {
         public DateTime TimeStamp { get; set; }

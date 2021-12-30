@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace SimpleFahrtenbuch
 {
-
+    //hier musste ich ein wenig tricksen damit die WebAPI unterschiedliche Datumsformate versteht
     public class DateTimeConverter : JsonConverter<DateTime>
     {
         private const string DateTimeLocalFormat = "yyyy-MM-ddTHH:mm";

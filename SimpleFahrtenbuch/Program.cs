@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
     .AddJsonOptions(opt =>
     {
+        //hier wird der besondere JsonConverter hinzugefügt
         opt.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
     });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
