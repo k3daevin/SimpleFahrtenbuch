@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="js/base.js"></script>
+    <title>StuhlgangBuch</title>
+</head>
+<body>
+    <h1>So schauts aus:</h1>
+    <div id="stuhlgang"></div>
+    <div id="newshit">
+        <form action="/Stuhlgang" method=post id="shitform">
+            <table>
+                <tr>
+                    <td>
+                        <input type="datetime-local" name="timeStamp" />
+                    </td>
+                    <td>
+                        <input type="number" name="bristolSkala" />
+                    </td>
+                    <td>
+                        <input type="text" name="kommentar" />
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Hinzufuegen" onclick="formsubmit()"/>
+        </form>
+    </div>
+    <script src="js/stuhlgang.js"></script>
+</body>
+</html>
