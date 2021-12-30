@@ -2,6 +2,9 @@
 //die URL zur API ändert sich nicht, wird also einmalig festgelegt
 const url = makeUrl('Stuhlgang');
 
+
+const shitform = document.getElementById('shitform')
+
 //erwartet die JSON-Daten von GET /Stuhlgang
 function setContent(data) {
     let stuhlgangDiv = document.getElementById('stuhlgang')
@@ -45,8 +48,12 @@ function reload() {
     fetch(url)
         .then(response => response.json())  
         .then(json => setContent(json))
-}
+    //entspricht
+    //let promise_fetch = fetch(url);
+    //let promise_json = promise_fetch.then(response => response.json())
+    //let promise_any = promise_json.then(json => setContent(json))
 
+}
 
 
 
@@ -54,10 +61,16 @@ function reload() {
 function formsubmit() {
     //FormData ist von JavaScript und liest solche <form>-Tags aus
     let formData = new FormData(shitform);
+    console.log(formData)
+
     //Ein Objekt aus dem FormData bauen
     let obj = Object.fromEntries(formData)
+    console.log(obj)
+
     //daraus einen JSON-String
     let json = JSON.stringify(obj)
+    console.log(json)
+
 
     //jetzt müssen wir beim fetch ein paar extra Argumente mitgeben
     //  method: 'POST' bedeutet eben ein POST-Request, dadurch wird die Methode mit [HttpPost] aufgerufen
